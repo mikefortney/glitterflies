@@ -50,7 +50,7 @@ const Nav: React.FC = () => {
         <span>Glitterflies</span>
       </LogoWrapper>
       <Links>
-        <Button>Mint</Button>
+        <Button>Mint - Coming Soon</Button>
         <a href="https://discord.gg/yume-labs" target="_blank" rel="noreferrer">
           <FaDiscord aria-label="Yume Labs Discord" />
         </a>
