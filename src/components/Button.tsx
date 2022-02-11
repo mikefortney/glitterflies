@@ -20,6 +20,7 @@ const Btn = styled.button`
     #ffe943,
     #ffff45
   );
+  cursor: pointer;
 `;
 
 const Button: React.FC<ButtonProps> = (props) => {
