@@ -36,6 +36,10 @@ const InfoPanels = () => {
       <Panel className="text">
         More info about the collection ea commodo consequat. Duis aute irure
         dolor in reprehenderit in voluptate velit esse cillum
+        <br />
+        <a href="https://t.co/MDEs7IZXEn" target="_blank" rel="noreferrer">
+          Read the Whitepaper
+        </a>
       </Panel>
     </Panels>
   );
