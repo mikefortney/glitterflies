@@ -7,6 +7,12 @@ import Nyaumon from 'assets/nyaumon.jpg';
 import Yosan from 'assets/yosan.jpg';
 import Kufim from 'assets/kufim.jpg';
 
+const Title = styled.div`
+  text-align: center;
+  font-size: var(--size-l-3);
+  padding-bottom: 1rem;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   gap: 2rem;
@@ -37,72 +43,75 @@ const Name = styled.div`
 
 const Team = () => {
   return (
-    <Wrapper>
-      <SinglePanel>
-        <Panel className="text default">
-          <div>
-            <img src={Misty} alt="" />
-          </div>
-          <Name>
-            <a href="https://twitter.com/MistyBayouNFT" target="_blank">
-              MistyBayou
-            </a>
-          </Name>
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </div>
-        </Panel>
-      </SinglePanel>
-      <SinglePanel>
-        <Panel className="text default">
-          <div>
-            <img src={Nyaumon} alt="" />
-          </div>
-          <Name>
-            <a href="https://twitter.com/nyaumon" target="_blank">
-              Nyaumon
-            </a>
-          </Name>
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </div>
-        </Panel>
-      </SinglePanel>
-      <SinglePanel>
-        <Panel className="text default">
-          <div>
-            <img src={Yosan} alt="" />
-          </div>
-          <Name>
-            <a href="https://twitter.com/_yhwhy" target="_blank">
-              Yosan
-            </a>
-          </Name>
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </div>
-        </Panel>
-      </SinglePanel>
-      <SinglePanel>
-        <Panel className="text default">
-          <div>
-            <img src={Kufim} alt="" />
-          </div>
-          <Name>
-            <a href="https://twitter.com/kufimbank" target="_blank">
-              Kufim
-            </a>
-          </Name>
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </div>
-        </Panel>
-      </SinglePanel>
-    </Wrapper>
+    <>
+      <Title>Meet The Team</Title>
+      <Wrapper>
+        <SinglePanel>
+          <Panel className="text default">
+            <div>
+              <img src={Misty} alt="" />
+            </div>
+            <Name>
+              <a href="https://twitter.com/MistyBayouNFT" target="_blank">
+                MistyBayou
+              </a>
+            </Name>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+          </Panel>
+        </SinglePanel>
+        <SinglePanel>
+          <Panel className="text default">
+            <div>
+              <img src={Nyaumon} alt="" />
+            </div>
+            <Name>
+              <a href="https://twitter.com/nyaumon" target="_blank">
+                Nyaumon
+              </a>
+            </Name>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+          </Panel>
+        </SinglePanel>
+        <SinglePanel>
+          <Panel className="text default">
+            <div>
+              <img src={Yosan} alt="" />
+            </div>
+            <Name>
+              <a href="https://twitter.com/_yhwhy" target="_blank">
+                Yosan
+              </a>
+            </Name>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+          </Panel>
+        </SinglePanel>
+        <SinglePanel>
+          <Panel className="text default">
+            <div>
+              <img src={Kufim} alt="" />
+            </div>
+            <Name>
+              <a href="https://twitter.com/kufimbank" target="_blank">
+                Kufim
+              </a>
+            </Name>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+          </Panel>
+        </SinglePanel>
+      </Wrapper>
+    </>
   );
 };
 
