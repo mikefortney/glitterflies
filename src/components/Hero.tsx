@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { GrRewind } from 'react-icons/gr';
 
-import Crystal from 'assets/crystal.png';
+import GFHero from 'assets/glitterflies-hero.png';
 
 const Wrapper = styled.div`
   height: 100vh;
-  background-image: url(${Crystal});
+  background-image: url(${GFHero});
   background-size: cover;
   background-position: center center;
   text-align: center;
@@ -32,12 +32,11 @@ const Logo = styled.div`
 `;
 
 const DownArrow = styled.div`
-  rotate: -90deg;
   font-size: 2rem;
   position: absolute;
   bottom: 2rem;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) rotate(-90deg);
 `;
 
 const Hero: React.FC = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Panels, Panel } from './styled-components';
+import { Panels, Panel as Pnl } from './styled-components';
 
 import GlitterflyRoughPanel from 'assets/glitterfly-rough-2.png';
 import Crystal from 'assets/crystal.jpg';
@@ -12,6 +12,10 @@ const GFImage = styled.img`
   z-index: 10;
   width: 552px;
   max-width: unset;
+`;
+
+const Panel = styled(Pnl)`
+  flex-basis: 488px;
 `;
 
 const InfoPanels = () => {

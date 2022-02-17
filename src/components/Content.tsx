@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 import Button from './Button';
 import InfoPanels from './InfoPanels';
@@ -35,9 +36,9 @@ const MintButton = styled.div`
   padding: 10rem 0;
 `;
 
-const Content: React.FC = () => {
+const Content = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
-    <ContentWrapper>
+    <ContentWrapper ref={ref}>
       <Nav />
       {/* <Intro /> */}
       <InfoPanels />
@@ -47,6 +48,6 @@ const Content: React.FC = () => {
       <Team />
     </ContentWrapper>
   );
-};
+});
 
 export default Content;

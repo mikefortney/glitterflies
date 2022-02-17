@@ -37,79 +37,85 @@ const Wrapper = styled.div`
   }
 `;
 
-const Name = styled.div`
-  padding: 0.5rem 0;
+const Pfp = styled.div`
+  border-bottom: 0.5rem solid #222;
 `;
 
-const Team = () => {
+const Name = styled.div`
+  padding-top: 0.5rem;
+`;
+
+interface TeamMemberProps {
+  imgSrc: string;
+  twitterHandle: string;
+  intro: string;
+}
+
+const TeamMember: React.FC<TeamMemberProps> = ({
+  imgSrc,
+  twitterHandle,
+  intro
+}) => {
+  return (
+    <SinglePanel>
+      <Panel>
+        <Pfp>
+          <img src={imgSrc} alt="" />
+        </Pfp>
+        <Name>
+          <a
+            href={`https://twitter.com/${twitterHandle}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            MistyBayou
+          </a>
+        </Name>
+        <div className="text default">{intro}</div>
+      </Panel>
+    </SinglePanel>
+  );
+};
+
+const theTeam: TeamMemberProps[] = [
+  {
+    imgSrc: Misty,
+    twitterHandle: 'MistyBayouNFT',
+    intro:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  },
+  {
+    imgSrc: Nyaumon,
+    twitterHandle: 'nyaumon',
+    intro:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  },
+  {
+    imgSrc: Yosan,
+    twitterHandle: '_yhwhy',
+    intro:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  },
+  {
+    imgSrc: Kufim,
+    twitterHandle: 'kufimbank',
+    intro:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  }
+];
+
+const Team: React.FC = () => {
   return (
     <>
       <Title>Meet The Team</Title>
       <Wrapper>
-        <SinglePanel>
-          <Panel className="text default">
-            <div>
-              <img src={Misty} alt="" />
-            </div>
-            <Name>
-              <a href="https://twitter.com/MistyBayouNFT" target="_blank">
-                MistyBayou
-              </a>
-            </Name>
-            <div>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </div>
-          </Panel>
-        </SinglePanel>
-        <SinglePanel>
-          <Panel className="text default">
-            <div>
-              <img src={Nyaumon} alt="" />
-            </div>
-            <Name>
-              <a href="https://twitter.com/nyaumon" target="_blank">
-                Nyaumon
-              </a>
-            </Name>
-            <div>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </div>
-          </Panel>
-        </SinglePanel>
-        <SinglePanel>
-          <Panel className="text default">
-            <div>
-              <img src={Yosan} alt="" />
-            </div>
-            <Name>
-              <a href="https://twitter.com/_yhwhy" target="_blank">
-                Yosan
-              </a>
-            </Name>
-            <div>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </div>
-          </Panel>
-        </SinglePanel>
-        <SinglePanel>
-          <Panel className="text default">
-            <div>
-              <img src={Kufim} alt="" />
-            </div>
-            <Name>
-              <a href="https://twitter.com/kufimbank" target="_blank">
-                Kufim
-              </a>
-            </Name>
-            <div>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </div>
-          </Panel>
-        </SinglePanel>
+        {theTeam.map((m) => (
+          <TeamMember
+            imgSrc={m.imgSrc}
+            twitterHandle={m.twitterHandle}
+            intro={m.intro}
+          />
+        ))}
       </Wrapper>
     </>
   );
