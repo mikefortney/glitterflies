@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 import { FaDiscord, FaTwitter } from 'react-icons/fa';
-import Button from './Button';
+// import Button from './Button';
 
 import GlitterflyRough from 'assets/glitterfly-rough.png';
 
 const NavWrapper = styled.div`
   /* border: 1px solid rgba(255, 255, 255, 0.7); */
-  padding: 1rem;
+  padding: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 `;
 
 const LogoWrapper = styled.div`
@@ -50,7 +54,7 @@ const Nav: React.FC = () => {
         <span>Glitterflies</span>
       </LogoWrapper>
       <Links>
-        <Button>Mint - Coming Soon</Button>
+        {/* <Button>Mint - Coming Soon</Button> */}
         <a href="https://discord.gg/yume-labs" target="_blank" rel="noreferrer">
           <FaDiscord aria-label="Yume Labs Discord" />
         </a>

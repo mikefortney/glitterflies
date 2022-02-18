@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import { GrRewind } from 'react-icons/gr';
 
 import GFHero from 'assets/glitterflies-hero.png';
+// import GFBG from 'assets/GFBG.png';
+// import GF1 from 'assets/gf1.png';
+// import GF2 from 'assets/gf2.png';
+// import GF3 from 'assets/gf3.png';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -43,7 +47,6 @@ const Hero: React.FC = () => {
   return (
     <Wrapper>
       <Logo>
-        {/* <img src={GlitterflyRough} alt="" /> */}
         <div>Glitterflies</div>
       </Logo>
       <DownArrow>

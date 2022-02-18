@@ -1,83 +1,52 @@
 import styled from 'styled-components';
 
+export const Gradient = styled.div`
+  background-image: linear-gradient(
+    to right top,
+    #c06ae9,
+    #a56de2,
+    #8b6fd8,
+    #736ecc,
+    #5f6cbe,
+    #4878c6,
+    #2c84ca,
+    #008ecb,
+    #00aad6,
+    #00c4cd,
+    #00dab4,
+    #77ec91
+  );
+  color: #fff;
+`;
+
+export const SectionTitle = styled.div`
+  background-color: #f2f2f2;
+  padding: 3rem 2rem;
+  border-left: 6px solid #222;
+  border-right: 6px solid #222;
+  h2 {
+    font-size: var(--size-l-3);
+  }
+  p {
+    font-size: var(--size-l-1);
+  }
+`;
+
 export const Panels = styled.div`
   display: flex;
   flex-wrap: wrap;
-  background-color: #222;
-  padding: 0.5rem;
-  gap: 0.5rem;
-  max-width: 1000px;
-  margin: 6rem auto 0;
-  transform: skew(2deg);
-`;
-
-export const SinglePanel = styled.div`
-  background-color: #222;
-  padding: 0.5rem;
+  gap: 1rem;
 `;
 
 export const Panel = styled.div`
-  min-height: 250px;
+  flex: 1;
+  border: 6px solid #222;
   background-color: #fff;
+  box-shadow: 0 6px 6px -6px #000;
+  color: #444;
   position: relative;
-  &.text,
-  .text {
-    padding: 1rem;
-    font-size: var(--size-l-3);
-    color: #444;
-    small {
-      display: block;
-      font-size: 1rem;
-      &:before {
-        height: 10px;
-        width: 10px;
-        background: currentColor;
-        margin-right: 8px;
-        position: relative;
-        content: '';
-        display: inline-block;
-        bottom: 1px;
-      }
-    }
-    &.default {
-      font-size: 1rem;
-    }
-  }
 `;
 
-export const SpeechBubble = styled.div`
-  background-color: #fff;
-  border: solid 3px #222;
-  border-radius: 12px;
-  /* display: inline-block; */
-  margin: 0.5em;
-  padding: 0.5em 1em;
-  position: relative;
-  color: #222;
-
-  &:before {
-    border: solid 12px transparent;
-    border-left: solid 12px #000;
-    border-top: solid 12px #000;
-    bottom: -24px;
-    content: '';
-    height: 0;
-    left: 24px;
-    position: absolute;
-    transform: skew(45deg);
-    width: 0;
-  }
-
-  &:after {
-    border: solid 10px transparent;
-    border-left: solid 10px #fff;
-    border-top: solid 10px #fff;
-    bottom: -19px;
-    content: '';
-    height: 0;
-    left: 24px;
-    position: absolute;
-    transform: skew(45deg);
-    width: 0;
-  }
+export const PanelInner = styled.div`
+  padding: 1rem;
 `;

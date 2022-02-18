@@ -1,14 +1,25 @@
 import styled from 'styled-components';
 
 interface ButtonProps {
-  size?: 'large';
+  size?: 'large' | 'medium';
 }
 
 const Btn = styled.button`
-  font-size: ${(props) => ((props as any).size === 'large' ? '2rem' : '1rem')};
-  height: ${(props) => ((props as any).size === 'large' ? '60px' : '40px')};
-  padding: ${(props) =>
-    (props as any).size === 'large' ? '0 3rem' : '0 2rem'};
+  font-size: ${(props) => {
+    if ((props as any).size === 'large') return '2rem';
+    if ((props as any).size === 'medium') return '1.5rem';
+    return '1rem';
+  }};
+  height: ${(props) => {
+    if ((props as any).size === 'large') return '60px';
+    if ((props as any).size === 'medium') return '50px';
+    return '40px';
+  }};
+  padding: ${(props) => {
+    if ((props as any).size === 'large') return '0 3rem';
+    if ((props as any).size === 'medium') return '0 3rem';
+    return '0 2rem';
+  }};
   border: 2px solid #555;
   color: #333;
   border-radius: 4px;
