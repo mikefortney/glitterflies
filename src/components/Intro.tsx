@@ -15,6 +15,13 @@ const Inner = styled.div`
   align-items: center;
   max-width: 1600px;
   margin: 0 auto;
+  @media screen and (max-width: 1199px) {
+    padding: 0 2rem;
+  }
+  @media screen and (max-width: 991px) {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
 `;
 
 const IntroContent = styled.div`
@@ -42,11 +49,15 @@ const IntroContent = styled.div`
   }
 `;
 
-const Flex = styled.div`
+const MintDetails = styled.div`
   display: flex;
   align-items: center;
+  gap: 2rem;
   & > div {
     flex: 1;
+  }
+  @media screen and (max-width: 1199px) {
+    flex-direction: column;
   }
 `;
 
@@ -54,7 +65,20 @@ const MintButton = styled.div`
   text-align: center;
 `;
 
-const Mint: React.FC = () => {
+const GFImg = styled.div`
+  @media screen and (max-width: 991px) {
+    max-width: 60%;
+    position: relative;
+    left: 20px;
+  }
+  @media screen and (max-width: 767px) {
+    max-width: 90%;
+    position: relative;
+    left: 20px;
+  }
+`;
+
+const Intro: React.FC = () => {
   return (
     <Wrapper>
       <Inner>
@@ -66,7 +90,7 @@ const Mint: React.FC = () => {
             powerful teleportation magic and will be bringing it soon to Solana
             games near you.
           </p>
-          <Flex>
+          <MintDetails>
             <div>
               <h4>Mint Details</h4>
               <ul>
@@ -78,14 +102,14 @@ const Mint: React.FC = () => {
             <MintButton>
               <Button size="medium">Connect Wallet</Button>
             </MintButton>
-          </Flex>
+          </MintDetails>
         </IntroContent>
-        <div>
+        <GFImg>
           <img src={GF2Flip} alt="" />
-        </div>
+        </GFImg>
       </Inner>
     </Wrapper>
   );
 };
 
-export default Mint;
+export default Intro;

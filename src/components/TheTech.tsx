@@ -5,24 +5,6 @@ import GFBF from 'assets/GFBG.png';
 import GF1 from 'assets/gf1.png';
 import GF3 from 'assets/gf3.png';
 
-const Blocks = styled.div`
-  display: flex;
-  & > div {
-    flex: 1;
-    padding: 2rem;
-    font-size: var(--size-l-1);
-    border: 6px solid #222;
-    &:first-child {
-      border-right: none;
-    }
-  }
-  &:first-child {
-    & > div {
-      border-bottom: none;
-    }
-  }
-`;
-
 const ImgBlock = styled.div`
   background-image: url(${GFBF});
   background-position: top left;
@@ -38,6 +20,12 @@ const ImgBlock = styled.div`
     }
     &.gf1 {
       transform: translate(-50%, -70%);
+    }
+    @media screen and (max-width: 767px) {
+      width: 90%;
+      &.gf3 {
+        transform: translate(-42%, -30%);
+      }
     }
   }
 `;
@@ -65,6 +53,38 @@ const TextBlock = styled.div`
   }
   p {
     padding: 0.5rem 0;
+  }
+`;
+
+const Blocks = styled.div`
+  display: flex;
+  & > div {
+    flex: 1;
+    padding: 2rem;
+    font-size: var(--size-l-1);
+    border: 6px solid #222;
+    &:first-child {
+      border-right: none;
+    }
+  }
+  &:first-child {
+    & > div {
+      border-bottom: none;
+    }
+    @media screen and (max-width: 991px) {
+      flex-direction: column-reverse;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    flex-direction: column;
+    & > div {
+      border: 6px solid #222 !important;
+    }
+    & > ${ImgBlock} {
+      min-height: 400px;
+      border-top: none !important;
+      border-bottom: none !important;
+    }
   }
 `;
 

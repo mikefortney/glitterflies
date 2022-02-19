@@ -25,6 +25,19 @@ const GlobalStyle = createGlobalStyle`
 		margin: 0;
 	}
 
+	body {
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+			'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+			sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	code {
+		font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+			monospace;
+	}
+
 	/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 	ul[role='list'],
 	ol[role='list'] {
@@ -79,8 +92,8 @@ const GlobalStyle = createGlobalStyle`
 		}
 	}
 
-	/* Scale Typography */
 	:root {
+		/* Scale Typography */
 		--scale: 1.333;
 		/* Don't change the lines below, you only need to change the --scale above. */
 		--size-l-1: calc(1rem * var(--scale));

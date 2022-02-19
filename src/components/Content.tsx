@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import styled from 'styled-components';
-import TopSection from './TopSection';
+import Intro from './Intro';
 import Nav from './Nav';
 import Roadmap from './Roadmap';
 import Team from './Team';
@@ -17,7 +17,7 @@ const Content = forwardRef<HTMLDivElement>((_props, ref) => {
     <>
       <ContentWrapper ref={ref}>
         <Nav />
-        <TopSection />
+        <Intro />
         <TheTech />
         <Roadmap />
         <Team />

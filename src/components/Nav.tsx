@@ -26,6 +26,9 @@ const LogoWrapper = styled.div`
   span {
     font-family: 'Comforter', cursive;
     font-size: var(--size-l-3);
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
   }
 `;
 

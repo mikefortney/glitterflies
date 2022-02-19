@@ -36,6 +36,11 @@ export const Panels = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  @media screen and (max-width: 1199px) {
+    padding: 0 2rem;
+    gap: 0;
+    justify-content: space-between;
+  }
 `;
 
 export const Panel = styled.div`
@@ -45,6 +50,9 @@ export const Panel = styled.div`
   box-shadow: 0 6px 6px -6px #000;
   color: #444;
   position: relative;
+  @media screen and (max-width: 1199px) {
+    flex: 0 1 30%;
+  }
 `;
 
 export const PanelInner = styled.div`

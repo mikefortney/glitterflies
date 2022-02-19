@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@glidejs/glide": "^3.5.2",
     "@mantine/core": "^3.6.9",
     "@mantine/hooks": "^3.6.9",
     "@testing-library/jest-dom": "^5.16.2",
@@ -47,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "@types/glidejs__glide": "^3.4.1",
     "@types/styled-components": "^5.1.22"
   }
 }

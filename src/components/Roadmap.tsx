@@ -29,18 +29,18 @@ const Wrapper = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 767px) {
+    padding: 2rem 1rem;
+  }
 `;
 
-// const Panel = styled(Pnl)`
-//   font-size: var(--size-l-1);
-//   ul {
-//     margin: 0;
-//   }
-// `;
-
 const Panels = styled(Pnls)`
-  & > div {
-    flex: 1;
+  @media screen and (max-width: 991px) {
+    flex-direction: column-reverse;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 0;
   }
 `;
 
@@ -53,19 +53,39 @@ const PanelInner = styled(PI)`
 `;
 
 const GFImg = styled.div`
+  flex: 1;
   position: relative;
+  @media screen and (max-width: 991px) {
+    min-height: 500px;
+  }
+  @media screen and (max-width: 767px) {
+    min-height: 350px;
+  }
   img {
     width: 65%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -40%);
+    @media screen and (max-width: 1199px) {
+      width: 100%;
+      transform: translate(-55%, -40%);
+    }
+    @media screen and (max-width: 991px) {
+      width: 75%;
+    }
+  }
+`;
+
+const Border = styled.div`
+  @media screen and (max-width: 991px) {
+    border-top: 6px solid #222;
   }
 `;
 
 const Roadmap: React.FC = () => {
   return (
-    <>
+    <Border>
       <SectionTitle>
         <h2>The Roadmap</h2>
       </SectionTitle>
@@ -154,7 +174,7 @@ const Roadmap: React.FC = () => {
           </Panel>
         </Panels>
       </Wrapper>
-    </>
+    </Border>
   );
 };
 
