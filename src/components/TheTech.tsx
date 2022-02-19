@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Gradient, SectionTitle } from './styled-components';
+import { SectionTitle } from './styled-components';
 
 import GFBF from 'assets/GFBG.png';
 import GF1 from 'assets/gf1.png';
@@ -42,7 +42,27 @@ const ImgBlock = styled.div`
   }
 `;
 
-const TextBlock = styled(Gradient)`
+const TextBlock = styled.div`
+  &.one {
+    background-image: radial-gradient(
+      circle,
+      #59ffff,
+      #4bf8ff,
+      #3ff0ff,
+      #33e9ff,
+      #2be1ff
+    );
+  }
+  &.two {
+    background-image: radial-gradient(
+      circle,
+      #d165bf,
+      #cf65c9,
+      #cb66d3,
+      #c768de,
+      #c06ae9
+    );
+  }
   p {
     padding: 0.5rem 0;
   }
@@ -65,7 +85,7 @@ const TheTech: React.FC = () => {
           <ImgBlock>
             <img className="gf3" src={GF3} alt="" />
           </ImgBlock>
-          <TextBlock>
+          <TextBlock className="one">
             <h4>Decision Trees</h4>
             <p>
               The way most NFTs are randomized, each attribute is entirely
@@ -89,7 +109,7 @@ const TheTech: React.FC = () => {
           </TextBlock>
         </Blocks>
         <Blocks>
-          <TextBlock>
+          <TextBlock className="two">
             <h4>The Palette Generator</h4>
             <p>
               With most collections, each attribute is created in color, and
