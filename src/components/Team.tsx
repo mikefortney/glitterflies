@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Glide from '@glidejs/glide';
 import {
   Panel,
-  // Panels,
   PanelInner,
   SectionTitle as ST,
   Gradient
@@ -84,9 +83,6 @@ const Wrapper = styled(Gradient)`
       max-width: 100%;
     }
   }
-  /* .glide__slide {
-    max-width: 412px;
-  } */
   .glide__arrow {
     color: rgba(255, 255, 255, 0.5);
     text-shadow: 0 0.25em 0.5em rgb(0 0 0 / 10%);
@@ -159,7 +155,6 @@ const Team: React.FC = () => {
         <h2>The Team</h2>
       </SectionTitle>
       <Wrapper>
-        {/* <Panels> */}
         <div>
           <div className="glide">
             <div className="glide__track" data-glide-el="track">
@@ -191,7 +186,6 @@ const Team: React.FC = () => {
             </div>
           </div>
         </div>
-        {/* </Panels> */}
       </Wrapper>
     </>
   );

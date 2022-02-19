@@ -18,7 +18,6 @@ const Wrapper = styled.div`
 const Logo = styled.div`
   display: inline-block;
   position: relative;
-  /* padding-top: 100px; */
   height: 100%;
   & > div {
     font-family: 'Comforter', cursive;
