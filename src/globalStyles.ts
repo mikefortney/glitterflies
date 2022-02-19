@@ -1,4 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
+import AugieWoff2 from './assets/fonts/augie-webfont.woff2';
+import AugieWoff from './assets/fonts/augie-webfont.woff';
+import AugieWoffTTF from './assets/fonts/augie-webfont.ttf';
 
 const GlobalStyle = createGlobalStyle`
 	/* Box sizing rules */
@@ -135,9 +138,9 @@ const GlobalStyle = createGlobalStyle`
 
 	@font-face {
     font-family: 'augieregular';
-    src: url('augie-webfont.woff2') format('woff2'),
-         url('augie-webfont.woff') format('woff'),
-         url('augie-webfont.ttf') format('truetype');
+    src: url(${AugieWoff2}) format('woff2'),
+         url(${AugieWoff}) format('woff'),
+         url(${AugieWoffTTF}) format('truetype');
     font-weight: normal;
     font-style: normal;
 	}
