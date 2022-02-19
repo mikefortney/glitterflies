@@ -46,11 +46,11 @@ const TextBlock = styled.div`
   &.one {
     background-image: radial-gradient(
       circle,
-      #59ffff,
-      #4bf8ff,
-      #3ff0ff,
-      #33e9ff,
-      #2be1ff
+      #6eeaff,
+      #56ddff,
+      #44d0ff,
+      #3fc2ff,
+      #48b3ff
     );
   }
   &.two {
