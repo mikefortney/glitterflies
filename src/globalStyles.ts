@@ -59,6 +59,11 @@ const GlobalStyle = createGlobalStyle`
 	/* A elements that don't have a class get default styles */
 	a:not([class]) {
 		text-decoration-skip-ink: auto;
+		color: #48b3ff;
+		&:hover,
+		&:focus {
+			color: #3d98d9;
+		}
 	}
 
 	/* Make images easier to work with */
@@ -156,6 +161,16 @@ const GlobalStyle = createGlobalStyle`
          url(${AugieWoffTTF}) format('truetype');
     font-weight: normal;
     font-style: normal;
+	}
+
+	.sr-only:not(:focus):not(:active) {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
 	}
 `;
 

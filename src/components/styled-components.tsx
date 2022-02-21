@@ -22,8 +22,7 @@ export const Gradient = styled.div`
 export const SectionTitle = styled.div`
   background-color: #f2f2f2;
   padding: 3rem 2rem;
-  border-left: 6px solid #222;
-  border-right: 6px solid #222;
+  border: 6px solid #222;
   h2 {
     font-size: var(--size-l-3);
   }
@@ -50,9 +49,6 @@ export const Panel = styled.div`
   box-shadow: 0 6px 6px -6px #000;
   color: #444;
   position: relative;
-  @media screen and (max-width: 1199px) {
-    flex: 0 1 30%;
-  }
 `;
 
 export const PanelInner = styled.div`

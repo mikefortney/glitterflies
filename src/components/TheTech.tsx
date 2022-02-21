@@ -63,13 +63,16 @@ const Blocks = styled.div`
     padding: 2rem;
     font-size: var(--size-l-1);
     border: 6px solid #222;
-    &:first-child {
-      border-right: none;
+    border-bottom: none;
+    @media screen and (min-width: 992px) {
+      &:first-child {
+        border-right: none;
+      }
     }
   }
   &:first-child {
     & > div {
-      border-bottom: none;
+      border-top: none;
     }
     @media screen and (max-width: 991px) {
       flex-direction: column-reverse;
@@ -77,9 +80,6 @@ const Blocks = styled.div`
   }
   @media screen and (max-width: 991px) {
     flex-direction: column;
-    & > div {
-      border: 6px solid #222 !important;
-    }
     & > ${ImgBlock} {
       min-height: 400px;
       border-top: none !important;
@@ -91,7 +91,7 @@ const Blocks = styled.div`
 const TheTech: React.FC = () => {
   return (
     <>
-      <SectionTitle>
+      <SectionTitle id="tech">
         <h2>The Technology</h2>
         <p>
           You can't talk about Yume Labs without talking about Technology, and

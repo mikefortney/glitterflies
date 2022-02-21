@@ -15,8 +15,6 @@ const Wrapper = styled.div`
   background-image: url(${GFBF});
   background-size: cover;
   background-position: center center;
-  border: 6px solid #222;
-  border-bottom: none;
 
   .mantine-Timeline-item {
     &:not(.mantine-Timeline-itemLineActive):before {
@@ -68,25 +66,23 @@ const GFImg = styled.div`
     left: 50%;
     transform: translate(-50%, -40%);
     @media screen and (max-width: 1199px) {
-      width: 100%;
-      transform: translate(-55%, -40%);
+      width: 90%;
+      transform: translate(-62%, -50%);
     }
     @media screen and (max-width: 991px) {
       width: 75%;
+      transform: translate(-55%, -40%);
     }
-  }
-`;
-
-const Border = styled.div`
-  @media screen and (max-width: 991px) {
-    border-top: 6px solid #222;
+    @media screen and (max-width: 767px) {
+      width: 90%;
+    }
   }
 `;
 
 const Roadmap: React.FC = () => {
   return (
-    <Border>
-      <SectionTitle>
+    <>
+      <SectionTitle id="roadmap">
         <h2>The Roadmap</h2>
       </SectionTitle>
       <Wrapper>
@@ -174,7 +170,7 @@ const Roadmap: React.FC = () => {
           </Panel>
         </Panels>
       </Wrapper>
-    </Border>
+    </>
   );
 };
 

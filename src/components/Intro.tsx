@@ -5,8 +5,7 @@ import { Gradient } from './styled-components';
 import GF2Flip from '../assets/gf2-flip.png';
 
 const Wrapper = styled(Gradient)`
-  padding: 10rem 0 10rem;
-  border: 6px solid #222;
+  padding: 4rem 0 4rem;
 `;
 
 const Inner = styled.div`
@@ -80,7 +79,7 @@ const GFImg = styled.div`
 
 const Intro: React.FC = () => {
   return (
-    <Wrapper>
+    <Wrapper id="intro">
       <Inner>
         <IntroContent>
           <h1>These are the Glitterflies</h1>

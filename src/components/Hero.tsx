@@ -5,6 +5,7 @@ import GFBG from 'assets/GFBG.png';
 import GF1 from 'assets/gf1.png';
 import GF2 from 'assets/gf2.png';
 import GF3 from 'assets/gf3.png';
+import GFLogo from 'assets/Glitterflies_Logo_glow_pink.png';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -16,21 +17,19 @@ const Wrapper = styled.div`
 `;
 
 const Logo = styled.div`
-  display: inline-block;
-  position: relative;
-  height: 100%;
-  & > div {
-    font-family: 'Comforter', cursive;
-    font-size: var(--size-l-9);
-    position: absolute;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  width: 50%;
+  z-index: 10;
+  @media screen and (max-width: 991px) {
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-shadow: 0px 5px 10px rgba(255, 255, 255, 0.75);
-    @media screen and (max-width: 767px) {
-      font-size: var(--size-l-6);
-      transform: translate(-50%, 60%);
-    }
+    width: 80%;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
   }
 `;
 
@@ -40,39 +39,52 @@ const GFImg = styled.img`
 `;
 
 const GFLeft = styled(GFImg)`
-  top: 1%;
+  bottom: 1%;
   left: 0.5%;
-  width: 33%;
+  width: 26%;
   @media screen and (max-width: 991px) {
-    top: 18%;
-    left: 2%;
+    width: 30%;
+    bottom: auto;
+    top: 8%;
+    left: 7%;
   }
   @media screen and (max-width: 767px) {
-    top: 10%;
-    left: 50%;
-    width: 50%;
-    transform: translate(-40%, 0);
+    width: 40%;
+    top: 18%;
+    left: 2%;
   }
 `;
 
 const GFMid = styled(GFImg)`
-  top: 50%;
+  top: 2%;
   left: 50%;
-  transform: translate(-59%, -44%);
-  width: 43%;
+  transform: translate(-40%, 0%);
+  width: 28%;
+  @media screen and (max-width: 991px) {
+    width: 32%;
+    top: 8%;
+    left: auto;
+    right: 4%;
+    transform: translate(0, 0);
+  }
+  @media screen and (max-width: 767px) {
+    width: 40%;
+    top: 20%;
+    right: -15px;
+  }
 `;
 
 const GFRight = styled(GFImg)`
   bottom: 6%;
   right: 1%;
-  width: 33%;
+  width: 28%;
   @media screen and (max-width: 991px) {
-    bottom: 18%;
-  }
-  @media screen and (max-width: 767px) {
-    bottom: 10%;
+    bottom: 15%;
     right: 50%;
     transform: translate(40%, 0);
+  }
+  @media screen and (max-width: 767px) {
+    bottom: 25%;
   }
 `;
 
@@ -90,11 +102,11 @@ const DownArrow = styled.div`
 const Hero: React.FC = () => {
   return (
     <Wrapper>
-      <GFLeft src={GF3} alt="" />
-      <GFMid src={GF2} alt="" />
+      <GFLeft src={GF2} alt="" />
+      <GFMid src={GF3} alt="" />
       <GFRight src={GF1} alt="" />
       <Logo>
-        <div>Glitterflies</div>
+        <img src={GFLogo} alt="The Glitterflies" />
       </Logo>
       <DownArrow>
         <GrRewind />

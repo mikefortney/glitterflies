@@ -60,8 +60,6 @@ const SectionTitle = styled(ST)`
 const Wrapper = styled(Gradient)`
   text-align: center;
   padding: 4rem 0;
-  border: 6px solid #222;
-  border-top: none;
   a {
     color: #333;
     &:hover,
@@ -151,7 +149,7 @@ const Team: React.FC = () => {
   }, [glideHasMounted]);
   return (
     <>
-      <SectionTitle>
+      <SectionTitle id="team">
         <h2>The Team</h2>
       </SectionTitle>
       <Wrapper>
