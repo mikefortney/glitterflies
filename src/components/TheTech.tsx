@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { SectionTitle } from './styled-components';
 
 import GFBF from 'assets/GFBG.png';
-import GF1 from 'assets/gf1.png';
-import GF3 from 'assets/gf3.png';
+import GF1 from 'assets/ImpishWings.png';
+import GF2 from 'assets/SneakPeek2.png';
 
 const ImgBlock = styled.div`
   background-image: url(${GFBF});
@@ -14,15 +14,10 @@ const ImgBlock = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    max-height: 600px;
-    &.gf3 {
-      transform: translate(-50%, -30%);
-    }
-    &.gf1 {
-      transform: translate(-50%, -70%);
-    }
+    max-width: 60%;
+    transform: translate(-50%, -50%);
     @media screen and (max-width: 767px) {
-      width: 90%;
+      max-width: 90%;
       &.gf3 {
         transform: translate(-42%, -30%);
       }
@@ -103,7 +98,7 @@ const TheTech: React.FC = () => {
       <div>
         <Blocks>
           <ImgBlock>
-            <img className="gf3" src={GF3} alt="" />
+            <img className="gf3" src={GF2} alt="" />
           </ImgBlock>
           <TextBlock className="one">
             <h4>Decision Trees</h4>

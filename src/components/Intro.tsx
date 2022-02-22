@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import Button from './Button';
 import { Gradient } from './styled-components';
 
-import GF2Flip from '../assets/gf2-flip.png';
+import GF4Flip from '../assets/FieryWingsFlip.png';
 
 const Wrapper = styled(Gradient)`
   padding: 4rem 0 4rem;
@@ -65,6 +64,7 @@ const MintButton = styled.div`
 `;
 
 const GFImg = styled.div`
+  max-width: 35%;
   @media screen and (max-width: 991px) {
     max-width: 60%;
     position: relative;
@@ -98,13 +98,11 @@ const Intro: React.FC = () => {
                 <li>Price: .33 $SOL</li>
               </ul>
             </div>
-            <MintButton>
-              <Button size="medium">Connect Wallet</Button>
-            </MintButton>
+            <MintButton>{/* Misty put the candy machine here :) */}</MintButton>
           </MintDetails>
         </IntroContent>
         <GFImg>
-          <img src={GF2Flip} alt="" />
+          <img src={GF4Flip} alt="" />
         </GFImg>
       </Inner>
     </Wrapper>
