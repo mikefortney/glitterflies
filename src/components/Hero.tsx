@@ -7,6 +7,7 @@ import GFLeft from 'assets/gf2.png';
 import GFMid from 'assets/gf3.png';
 import GFRight from 'assets/gf1.png';
 import GFLogo from 'assets/Glitterflies_Logo_glow_pink.png';
+import { useEffect, useState } from 'react';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -71,7 +72,7 @@ const Wrapper = styled.div`
 
   #logo {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 25%;
     width: 50%;
     z-index: 10;
@@ -97,18 +98,24 @@ const DownArrow = styled.div`
 `;
 
 const Hero: React.FC = () => {
+  const [run, setRun] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setRun(true);
+    }, 500);
+  }, []);
   return (
     <Wrapper>
-      <Fade left>
+      <Fade left when={run}>
         <img id="gf-left" src={GFLeft} alt="" />
       </Fade>
-      <Fade top>
+      <Fade top when={run}>
         <img id="gf-mid" src={GFMid} alt="" />
       </Fade>
-      <Fade right>
+      <Fade right when={run}>
         <img id="gf-right" src={GFRight} alt="" />
       </Fade>
-      <Fade cascade>
+      <Fade when={run}>
         <img id="logo" src={GFLogo} alt="The Glitterflies" />
       </Fade>
       <DownArrow>
