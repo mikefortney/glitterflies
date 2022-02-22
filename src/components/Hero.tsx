@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setRun(true);
-    }, 500);
+    }, 700);
   }, []);
   return (
     <Wrapper>
