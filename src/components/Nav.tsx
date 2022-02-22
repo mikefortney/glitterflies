@@ -125,6 +125,12 @@ const MobileNavInner = styled.div`
   }
 `;
 
+const BurgerWrapper = styled.div`
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+`;
+
 const getYOffset = (el: HTMLElement) => {
   const box = el.getBoundingClientRect();
   const body = document.body;
@@ -201,13 +207,13 @@ const Nav: React.FC = () => {
             </a>
           </Social>
         </Links>
-        <div>
+        <BurgerWrapper>
           <Burger
             title="Open Navigation"
             opened={mobileNavIsOpen}
             onClick={() => setMobileNavIsOpen((o: boolean) => !o)}
           />
-        </div>
+        </BurgerWrapper>
       </NavInner>
       <MobileNav
         opened={mobileNavIsOpen}

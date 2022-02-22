@@ -113,10 +113,7 @@ const PanelInner = styled(PI)`
 `;
 
 const Pfp = styled.img`
-  height: 400px;
-  @media screen and (max-width: 1199px) {
-    height: 300px;
-  }
+  height: 300px;
   @media screen and (max-width: 991px) {
     height: 250px;
   }
