@@ -16,12 +16,20 @@ const ImgBlock = styled.div`
     left: 50%;
     max-width: 60%;
     transform: translate(-50%, -50%);
+    @media screen and (max-width: 1199px) {
+      max-width: 80%;
+    }
+    @media screen and (max-width: 991px) {
+      max-width: 60%;
+    }
     @media screen and (max-width: 767px) {
       max-width: 90%;
-      &.gf3 {
-        transform: translate(-42%, -30%);
-      }
     }
+  }
+  @media screen and (max-width: 991px) {
+    min-height: 550px;
+    border-top: none !important;
+    border-bottom: none !important;
   }
 `;
 
@@ -75,11 +83,6 @@ const Blocks = styled.div`
   }
   @media screen and (max-width: 991px) {
     flex-direction: column;
-    & > ${ImgBlock} {
-      min-height: 400px;
-      border-top: none !important;
-      border-bottom: none !important;
-    }
   }
 `;
 

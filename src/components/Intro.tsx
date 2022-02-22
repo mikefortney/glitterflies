@@ -72,8 +72,7 @@ const GFImg = styled.div`
   }
   @media screen and (max-width: 767px) {
     max-width: 90%;
-    position: relative;
-    left: 20px;
+    left: auto;
   }
 `;
 
