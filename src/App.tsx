@@ -1,3 +1,4 @@
+import { MutableRefObject, useEffect } from 'react';
 import Content from 'components/Content';
 import Hero from 'components/Hero';
 import useHeroScroll from 'hooks/useHeroScroll';
@@ -6,13 +7,15 @@ import smoothscroll from 'smoothscroll-polyfill';
 
 const App: React.FC = () => {
   const { contentRef } = useHeroScroll();
-  smoothscroll.polyfill();
+  useEffect(() => {
+    smoothscroll.polyfill();
+  }, []);
 
   return (
     <>
       <GlobalStyle />
       <Hero />
-      <Content ref={contentRef} />
+      <Content ref={contentRef as MutableRefObject<HTMLDivElement>} />
     </>
   );
 };

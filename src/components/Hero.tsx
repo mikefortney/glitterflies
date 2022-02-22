@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { GrRewind } from 'react-icons/gr';
+import Fade from 'react-reveal';
 
 import GFBG from 'assets/GFBG.png';
-import GF1 from 'assets/gf1.png';
-import GF2 from 'assets/gf2.png';
-import GF3 from 'assets/gf3.png';
+import GFLeft from 'assets/gf2.png';
+import GFMid from 'assets/gf3.png';
+import GFRight from 'assets/gf1.png';
 import GFLogo from 'assets/Glitterflies_Logo_glow_pink.png';
 
 const Wrapper = styled.div`
@@ -14,84 +15,80 @@ const Wrapper = styled.div`
   background-position: center center;
   text-align: center;
   position: relative;
-`;
 
-const Logo = styled.div`
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  width: 50%;
-  z-index: 10;
-  @media screen and (max-width: 991px) {
+  #gf-left,
+  #gf-mid,
+  #gf-right {
+    position: absolute;
+  }
+
+  #gf-left {
+    bottom: 1%;
+    left: 0.5%;
+    width: 26%;
+    @media screen and (max-width: 991px) {
+      bottom: auto;
+      top: 8%;
+      left: 7%;
+      width: 30%;
+    }
+    @media screen and (max-width: 767px) {
+      top: 18%;
+      left: 2%;
+      width: 40%;
+    }
+  }
+
+  #gf-mid {
+    top: 2%;
+    left: 39%;
+    width: 28%;
+    @media screen and (max-width: 991px) {
+      width: 32%;
+      top: 8%;
+      left: auto;
+      right: 4%;
+    }
+    @media screen and (max-width: 767px) {
+      width: 40%;
+      top: 20%;
+      right: -15px;
+    }
+  }
+
+  #gf-right {
+    bottom: 6%;
+    right: 1%;
+    width: 28%;
+    @media screen and (max-width: 991px) {
+      bottom: 15%;
+      right: 50%;
+    }
+    @media screen and (max-width: 767px) {
+      bottom: 25%;
+    }
+  }
+
+  #logo {
+    position: absolute;
     top: 50%;
-    width: 80%;
-  }
-  @media screen and (max-width: 767px) {
-    width: 100%;
-  }
-`;
-
-const GFImg = styled.img`
-  position: absolute;
-  max-width: none;
-`;
-
-const GFLeft = styled(GFImg)`
-  bottom: 1%;
-  left: 0.5%;
-  width: 26%;
-  @media screen and (max-width: 991px) {
-    width: 30%;
-    bottom: auto;
-    top: 8%;
-    left: 7%;
-  }
-  @media screen and (max-width: 767px) {
-    width: 40%;
-    top: 18%;
-    left: 2%;
-  }
-`;
-
-const GFMid = styled(GFImg)`
-  top: 2%;
-  left: 50%;
-  transform: translate(-40%, 0%);
-  width: 28%;
-  @media screen and (max-width: 991px) {
-    width: 32%;
-    top: 8%;
-    left: auto;
-    right: 4%;
-    transform: translate(0, 0);
-  }
-  @media screen and (max-width: 767px) {
-    width: 40%;
-    top: 20%;
-    right: -15px;
-  }
-`;
-
-const GFRight = styled(GFImg)`
-  bottom: 6%;
-  right: 1%;
-  width: 28%;
-  @media screen and (max-width: 991px) {
-    bottom: 15%;
-    right: 50%;
-    transform: translate(40%, 0);
-  }
-  @media screen and (max-width: 767px) {
-    bottom: 25%;
+    left: 25%;
+    width: 50%;
+    z-index: 10;
+    @media screen and (max-width: 991px) {
+      top: 50%;
+      width: 80%;
+    }
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
   }
 `;
 
 const DownArrow = styled.div`
   font-size: 2rem;
   position: absolute;
-  bottom: 2rem;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%) rotate(-90deg);
   @media screen and (max-width: 767px) {
@@ -102,12 +99,18 @@ const DownArrow = styled.div`
 const Hero: React.FC = () => {
   return (
     <Wrapper>
-      <GFLeft src={GF2} alt="" />
-      <GFMid src={GF3} alt="" />
-      <GFRight src={GF1} alt="" />
-      <Logo>
-        <img src={GFLogo} alt="The Glitterflies" />
-      </Logo>
+      <Fade left>
+        <img id="gf-left" src={GFLeft} alt="" />
+      </Fade>
+      <Fade top>
+        <img id="gf-mid" src={GFMid} alt="" />
+      </Fade>
+      <Fade right>
+        <img id="gf-right" src={GFRight} alt="" />
+      </Fade>
+      <Fade cascade>
+        <img id="logo" src={GFLogo} alt="The Glitterflies" />
+      </Fade>
       <DownArrow>
         <GrRewind />
       </DownArrow>

@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { FaDiscord, FaTwitter } from 'react-icons/fa';
 import { Burger, Drawer } from '@mantine/core';
@@ -142,7 +142,7 @@ const getYOffset = (el: HTMLElement) => {
 };
 
 const Nav: React.FC = () => {
-  const navRef = useRef<HTMLDivElement>();
+  const navRef = useRef<HTMLDivElement>(null);
   const [navHeight, setNavHeight] = useState(0);
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
 
@@ -172,7 +172,7 @@ const Nav: React.FC = () => {
   };
 
   return (
-    <NavWrapper ref={navRef as MutableRefObject<HTMLDivElement>}>
+    <NavWrapper ref={navRef}>
       <NavInner>
         <LogoWrapper>
           <a href="#intro" onClick={(e) => anchorScroll(e, 'intro')}>
