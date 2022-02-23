@@ -54,7 +54,7 @@ const MintDetails = styled.div`
   & > div {
     flex: 1;
   }
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 767px) {
     flex-direction: column;
   }
 `;

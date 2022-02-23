@@ -178,6 +178,9 @@ const Nav: React.FC = () => {
           </a>
         </LogoWrapper>
         <Links>
+          <a href="#intro" onClick={(e) => anchorScroll(e, 'intro')}>
+            The Mint
+          </a>
           <a href="#tech" onClick={(e) => anchorScroll(e, 'tech')}>
             The Technology
           </a>
@@ -206,6 +209,7 @@ const Nav: React.FC = () => {
         </Links>
         <BurgerWrapper>
           <Burger
+            color="#fff"
             title="Open Navigation"
             opened={mobileNavIsOpen}
             onClick={() => setMobileNavIsOpen((o: boolean) => !o)}
@@ -224,6 +228,11 @@ const Nav: React.FC = () => {
             Navigation
           </div>
           <ul style={{ listStyle: 'none' }}>
+            <li>
+              <a href="#intro" onClick={(e) => anchorScroll(e, 'intro', true)}>
+                The Mint
+              </a>
+            </li>
             <li>
               <a href="#tech" onClick={(e) => anchorScroll(e, 'tech', true)}>
                 The Technology
