@@ -60,7 +60,8 @@ const MintDetails = styled.div`
 `;
 
 const MintButton = styled.div`
-  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
 `;
 
 const GFImg = styled.div`
@@ -88,17 +89,28 @@ const Intro: React.FC = () => {
             powerful teleportation magic and will be bringing it soon to Solana
             games near you.
           </p>
-          <MintDetails>
-            <div>
-              <h4>Mint Details</h4>
-              <ul>
-                <li>Date: 3rd March, 2022</li>
-                <li>Time: 10:00 PM UTC</li>
-                <li>Price: .33 $SOL</li>
-              </ul>
-            </div>
+          <div>
+            <h4>Mint Details</h4>
+            <MintDetails>
+              <div>
+                Whitelist
+                <ul>
+                  <li>Date: 3rd March, 2022</li>
+                  <li>Time: 10:00 PM UTC</li>
+                  <li>Price: .33 $SOL</li>
+                </ul>
+              </div>
+              <div>
+                Public
+                <ul>
+                  <li>Date: 4th March, 2022</li>
+                  <li>Time: 2:00 AM UTC</li>
+                  <li>Price: 1 $SOL</li>
+                </ul>
+              </div>
+            </MintDetails>
             <MintButton>{/* Misty put the candy machine here :) */}</MintButton>
-          </MintDetails>
+          </div>
         </IntroContent>
         <GFImg>
           <img src={GF4Flip} alt="" />
