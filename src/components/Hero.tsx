@@ -62,11 +62,11 @@ const Wrapper = styled.div`
     right: 1%;
     width: 28%;
     @media screen and (max-width: 991px) {
-      bottom: 15%;
-      right: 50%;
+      bottom: 12%;
+      right: 40%;
     }
     @media screen and (max-width: 767px) {
-      bottom: 25%;
+      bottom: 20%;
     }
   }
 
@@ -77,11 +77,12 @@ const Wrapper = styled.div`
     width: 50%;
     z-index: 10;
     @media screen and (max-width: 991px) {
-      top: 50%;
-      width: 80%;
+      top: 40%;
+      width: 100%;
+      left: 0;
     }
     @media screen and (max-width: 767px) {
-      width: 100%;
+      top: 45%;
     }
   }
 `;
