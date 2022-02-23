@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   background-position: center center;
   text-align: center;
   position: relative;
+  overflow: hidden;
 
   #gf-left,
   #gf-mid,

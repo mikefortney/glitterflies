@@ -28,6 +28,10 @@ const Wrapper = styled.div`
     }
   }
 
+  .mantine-Timeline-itemTitle {
+    font-weight: 600;
+  }
+
   @media screen and (max-width: 767px) {
     padding: 2rem 1rem;
   }
