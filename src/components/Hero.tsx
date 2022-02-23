@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
     }, 700);
   }, []);
   return (
-    <Wrapper>
+    <Wrapper id="top">
       <Fade left when={run}>
         <img id="gf-left" src={GFLeft} alt="" />
       </Fade>

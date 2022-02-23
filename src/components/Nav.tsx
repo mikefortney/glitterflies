@@ -68,13 +68,10 @@ const Social = styled.div`
   gap: 1.5rem;
   align-items: center;
   a {
-    font-size: var(--size-l-4);
+    font-size: var(--size-l-3);
     svg {
       display: block;
     }
-  }
-  @media screen and (max-width: 767px) {
-    font-size: var(--size-l-3);
   }
 `;
 
@@ -175,7 +172,7 @@ const Nav: React.FC = () => {
     <NavWrapper ref={navRef}>
       <NavInner>
         <LogoWrapper>
-          <a href="#intro" onClick={(e) => anchorScroll(e, 'intro')}>
+          <a href="#top" onClick={(e) => anchorScroll(e, 'top')}>
             <img id="logo-sm" src={GFLogoSm} alt="The Glitterflies" />
             <img id="logo" src={GFLogo} alt="The Glitterflies" />
           </a>
