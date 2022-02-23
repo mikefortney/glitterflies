@@ -71,7 +71,6 @@ const SectionTitle = styled(ST)`
 `;
 
 const Wrapper = styled(Gradient)`
-  text-align: center;
   padding: 4rem 0;
   a {
     color: #333;
@@ -97,6 +96,9 @@ const Wrapper = styled(Gradient)`
   .glide__arrow {
     color: rgba(255, 255, 255, 0.5);
     text-shadow: 0 0.25em 0.5em rgb(0 0 0 / 10%);
+  }
+  @media screen and (max-width: 767px) {
+    text-align: center;
   }
 `;
 
