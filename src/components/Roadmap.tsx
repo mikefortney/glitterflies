@@ -167,7 +167,7 @@ const Roadmap: React.FC = () => {
                       NFT holders for exclusive partnerships &amp; benefits.
                     </li>
                     <li>
-                      10% of royalties will be donated to the{' '}
+                      10% of royalties will be donated to{' '}
                       <a
                         href="https://www.zerofoodprint.org/"
                         target="_blank"
