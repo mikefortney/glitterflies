@@ -123,8 +123,8 @@ const Roadmap: React.FC = () => {
                       </a>{' '}
                       from 10pm UTC.
                     </li>
-                    <li>Whitelist can mint one per wallet for 12 hours.</li>
-                    <li>Public sale after 12 hours.</li>
+                    <li>Whitelist can mint one per wallet for 4 hours.</li>
+                    <li>Public sale after 4 hours.</li>
                   </ul>
                 </Timeline.Item>
                 <Timeline.Item

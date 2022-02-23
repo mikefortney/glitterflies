@@ -13,7 +13,7 @@ import { BiLeftArrow } from 'react-icons/bi';
 import Misty from 'assets/misty.jpg';
 import Nyaumon from 'assets/nyaumon.jpg';
 import Yosan from 'assets/yosan.png';
-import Kufim from 'assets/kufim.jpg';
+import Lex from 'assets/lex.jpg';
 
 interface TeamMemberProps {
   name: string;
@@ -55,8 +55,8 @@ const theTeam: TeamMemberProps[] = [
     `
   },
   {
-    name: 'Kufim',
-    imgSrc: Kufim,
+    name: 'Lex',
+    imgSrc: Lex,
     twitterHandle: 'kufimbank',
     title: 'Marketing &amp; Partnerships Lead',
     intro: `
