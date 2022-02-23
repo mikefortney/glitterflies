@@ -140,8 +140,15 @@ const Roadmap: React.FC = () => {
                     </li>
                     <li>Establish wallet verification.</li>
                     <li>
-                      10% of mint proceeds will be donated to the community's
-                      chosen charity.
+                      10% of mint proceeds will be donated to{' '}
+                      <a
+                        href="https://www.zerofoodprint.org/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Zero Foodprint
+                      </a>
+                      .
                     </li>
                   </ul>
                 </Timeline.Item>
@@ -160,8 +167,15 @@ const Roadmap: React.FC = () => {
                       NFT holders for exclusive partnerships &amp; benefits.
                     </li>
                     <li>
-                      10% of royalties will be donated to the community's chosen
-                      charity.
+                      10% of royalties will be donated to the{' '}
+                      <a
+                        href="https://www.zerofoodprint.org/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Zero Foodprint
+                      </a>
+                      .
                     </li>
                   </ul>
                 </Timeline.Item>
