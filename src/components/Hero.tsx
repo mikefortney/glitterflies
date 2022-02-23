@@ -95,6 +95,9 @@ const DownArrow = styled.div`
   @media screen and (max-width: 767px) {
     bottom: 0.5rem;
   }
+  svg > polygon {
+    stroke: #fff;
+  }
 `;
 
 const Hero: React.FC = () => {
