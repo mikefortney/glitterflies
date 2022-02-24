@@ -1,13 +1,14 @@
+import { MutableRefObject, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { GrRewind } from 'react-icons/gr';
 import Fade from 'react-reveal';
+import { smoothScroll } from 'utils';
 
 import GFBG from 'assets/GFBG.png';
 import GFLeft from 'assets/gf2.png';
 import GFMid from 'assets/gf3.png';
 import GFRight from 'assets/gf1.png';
 import GFLogo from 'assets/Glitterflies_Logo_glow_pink.png';
-import { useEffect, useState } from 'react';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -102,13 +103,19 @@ const DownArrow = styled.div`
   }
 `;
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  navRef: MutableRefObject<HTMLDivElement>;
+}
+
+const Hero: React.FC<HeroProps> = ({ navRef }) => {
   const [run, setRun] = useState(false);
+  const [navHeight, setNavHeight] = useState(0);
   useEffect(() => {
+    setNavHeight(navRef.current?.clientHeight || 0);
     setTimeout(() => {
       setRun(true);
-    }, 700);
-  }, []);
+    }, 500);
+  }, [navRef]);
   return (
     <Wrapper id="top">
       <Fade left when={run}>
@@ -124,7 +131,9 @@ const Hero: React.FC = () => {
         <img id="logo" src={GFLogo} alt="The Glitterflies" />
       </Fade>
       <DownArrow>
-        <GrRewind />
+        <a href="#intro" onClick={(e) => smoothScroll(e, 'intro', navHeight)}>
+          <GrRewind />
+        </a>
       </DownArrow>
     </Wrapper>
   );

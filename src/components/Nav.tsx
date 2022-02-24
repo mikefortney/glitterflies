@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { forwardRef, MutableRefObject, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FaDiscord, FaTwitter } from 'react-icons/fa';
 import { Burger, Drawer } from '@mantine/core';
+import { smoothScroll } from 'utils';
 
 import NavBG from 'assets/nav-bg.png';
 import GFLogo from 'assets/Glitterflies_Logo_glow_pink.png';
@@ -108,8 +109,9 @@ const MobileNavInner = styled.div`
       margin-bottom: 2rem;
       &.social {
         flex: 1;
-        padding: 0 1rem;
+        padding: 0 2rem;
         text-align: right;
+        font-size: var(--size-l-4);
         &:last-child {
           text-align: left;
         }
@@ -128,66 +130,41 @@ const BurgerWrapper = styled.div`
   }
 `;
 
-const getYOffset = (el: HTMLElement) => {
-  const box = el.getBoundingClientRect();
-  const body = document.body;
-  const docEl = document.documentElement;
-  const scrollTop = window.scrollY || docEl.scrollTop || body.scrollTop;
-  const clientTop = docEl.clientTop || body.clientTop || 0;
-  const top = box.top + scrollTop - clientTop;
-  return Math.round(top);
-};
-
-const Nav: React.FC = () => {
-  const navRef = useRef<HTMLDivElement>(null);
+const Nav = forwardRef<HTMLDivElement>((_props, ref) => {
   const [navHeight, setNavHeight] = useState(0);
   const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      setNavHeight(navRef.current?.clientHeight || 0);
+      setNavHeight(
+        (ref as MutableRefObject<HTMLDivElement>).current?.clientHeight || 0
+      );
     }, 1000);
-  }, []);
-
-  const anchorScroll = (
-    e: React.MouseEvent | React.KeyboardEvent,
-    anchor: string,
-    isMobile?: boolean
-  ) => {
-    e.preventDefault();
-    const el = document.getElementById(anchor);
-    if (el) {
-      if (isMobile) {
-        setMobileNavIsOpen(false);
-      }
-
-      const top = getYOffset(el) - navHeight;
-      setTimeout(() => {
-        window.scrollTo({ behavior: 'smooth', top: top });
-      }, 1);
-    }
-  };
+  }, [ref]);
 
   return (
-    <NavWrapper ref={navRef}>
+    <NavWrapper ref={ref}>
       <NavInner>
         <LogoWrapper>
-          <a href="#top" onClick={(e) => anchorScroll(e, 'top')}>
+          <a href="#top" onClick={(e) => smoothScroll(e, 'top', navHeight)}>
             <img id="logo-sm" src={GFLogoSm} alt="The Glitterflies" />
             <img id="logo" src={GFLogo} alt="The Glitterflies" />
           </a>
         </LogoWrapper>
         <Links>
-          <a href="#intro" onClick={(e) => anchorScroll(e, 'intro')}>
+          <a href="#intro" onClick={(e) => smoothScroll(e, 'intro', navHeight)}>
             The Mint
           </a>
-          <a href="#tech" onClick={(e) => anchorScroll(e, 'tech')}>
+          <a href="#tech" onClick={(e) => smoothScroll(e, 'tech', navHeight)}>
             The Technology
           </a>
-          <a href="#roadmap" onClick={(e) => anchorScroll(e, 'roadmap')}>
+          <a
+            href="#roadmap"
+            onClick={(e) => smoothScroll(e, 'roadmap', navHeight)}
+          >
             The Roadmap
           </a>
-          <a href="#team" onClick={(e) => anchorScroll(e, 'team')}>
+          <a href="#team" onClick={(e) => smoothScroll(e, 'team', navHeight)}>
             The Team
           </a>
           <Social>
@@ -229,25 +206,50 @@ const Nav: React.FC = () => {
           </div>
           <ul style={{ listStyle: 'none' }}>
             <li>
-              <a href="#intro" onClick={(e) => anchorScroll(e, 'intro', true)}>
+              <a
+                href="#intro"
+                onClick={(e) =>
+                  smoothScroll(e, 'intro', navHeight, true, () =>
+                    setMobileNavIsOpen(false)
+                  )
+                }
+              >
                 The Mint
               </a>
             </li>
             <li>
-              <a href="#tech" onClick={(e) => anchorScroll(e, 'tech', true)}>
+              <a
+                href="#tech"
+                onClick={(e) =>
+                  smoothScroll(e, 'tech', navHeight, true, () =>
+                    setMobileNavIsOpen(false)
+                  )
+                }
+              >
                 The Technology
               </a>
             </li>
             <li>
               <a
                 href="#roadmap"
-                onClick={(e) => anchorScroll(e, 'roadmap', true)}
+                onClick={(e) =>
+                  smoothScroll(e, 'roadmap', navHeight, true, () =>
+                    setMobileNavIsOpen(false)
+                  )
+                }
               >
                 The Roadmap
               </a>
             </li>
             <li>
-              <a href="#team" onClick={(e) => anchorScroll(e, 'team', true)}>
+              <a
+                href="#team"
+                onClick={(e) =>
+                  smoothScroll(e, 'team', navHeight, true, () =>
+                    setMobileNavIsOpen(false)
+                  )
+                }
+              >
                 The Team
               </a>
             </li>
@@ -274,6 +276,6 @@ const Nav: React.FC = () => {
       </MobileNav>
     </NavWrapper>
   );
-};
+});
 
 export default Nav;

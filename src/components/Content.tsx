@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, MutableRefObject } from 'react';
 import styled from 'styled-components';
 import Intro from './Intro';
 import Nav from './Nav';
@@ -12,11 +12,15 @@ const ContentWrapper = styled.div`
   position: relative;
 `;
 
-const Content = forwardRef<HTMLDivElement>((_props, ref) => {
+interface ContentProps {
+  navRef: MutableRefObject<HTMLDivElement>;
+}
+
+const Content = forwardRef<HTMLDivElement, ContentProps>(({ navRef }, ref) => {
   return (
     <>
       <ContentWrapper ref={ref}>
-        <Nav />
+        <Nav ref={navRef} />
         <Intro />
         <TheTech />
         <Roadmap />

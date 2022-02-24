@@ -8,6 +8,7 @@ import smoothscroll from 'smoothscroll-polyfill';
 const App: React.FC = () => {
   // const { contentRef } = useHeroScroll();
   const contentRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     smoothscroll.polyfill();
   }, []);
@@ -15,8 +16,11 @@ const App: React.FC = () => {
   return (
     <>
       <GlobalStyle />
-      <Hero />
-      <Content ref={contentRef as MutableRefObject<HTMLDivElement>} />
+      <Hero navRef={navRef as MutableRefObject<HTMLDivElement>} />
+      <Content
+        ref={contentRef as MutableRefObject<HTMLDivElement>}
+        navRef={navRef as MutableRefObject<HTMLDivElement>}
+      />
     </>
   );
 };
