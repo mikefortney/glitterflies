@@ -95,7 +95,7 @@ const Intro: React.FC = () => {
               <div>
                 Whitelist
                 <ul>
-                  <li>Date: 3rd March, 2022</li>
+                  <li>Date: 6th March, 2022</li>
                   <li>Time: 10:00 PM UTC</li>
                   <li>Price: .33 $SOL</li>
                 </ul>
@@ -103,7 +103,7 @@ const Intro: React.FC = () => {
               <div>
                 Public
                 <ul>
-                  <li>Date: 4th March, 2022</li>
+                  <li>Date: 7th March, 2022</li>
                   <li>Time: 2:00 AM UTC</li>
                   <li>Price: 1 $SOL</li>
                 </ul>
