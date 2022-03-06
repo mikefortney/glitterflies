@@ -61,8 +61,11 @@ const MintDetails = styled.div`
 `;
 
 const MintButton = styled.div`
-  display: inline-block;
-  margin: 0 auto;
+  padding-top: 3rem;
+  & > div {
+    display: inline-block;
+    margin: 0 auto;
+  }
 `;
 
 const GFImg = styled.div`
